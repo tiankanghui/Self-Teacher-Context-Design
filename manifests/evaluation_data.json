@@ -1,0 +1,37 @@
+{
+  "aime24": {
+    "path": "aime2024/train.parquet",
+    "rows": 30,
+    "content_sha256": "6eae3ff7fbadb268ee9366e1b6b0d51307fbb6eeac9588f9c501198591fd9af7"
+  },
+  "aime25": {
+    "path": "aime2025/train.parquet",
+    "rows": 30,
+    "content_sha256": "4235edac4f0126bea5235f4024cb780fcc3dfbf5c226f0f41548c314e86a61f7"
+  },
+  "hmmt25": {
+    "path": "hmmt2025/train.parquet",
+    "rows": 30,
+    "content_sha256": "1bc43835909da606ba694bac491578dca8a72751870e0fa4e5316e7380582d91"
+  },
+  "mt_aime": {
+    "path": "mt-aime2024/mt-aime2024.parquet",
+    "rows": 30,
+    "content_sha256": "71649418be68856c4529d4583728288f95110437e590f1ce18b760d0a32a382b"
+  },
+  "gpqa": {
+    "path": "gpqa_diamond/gpqa_diamond.parquet",
+    "rows": 198,
+    "content_sha256": "2d18f609631bce4ba737dad143d81ce467696bc5424a32577652cb5d0895e666"
+  },
+  "autologi": {
+    "path": "autologi/AutoLogi_en.jsonl",
+    "rows": 1575,
+    "content_sha256": "e915119fcf279ad9b70aad7016203c802cbc2058f77cb5db18dd26ff130e01e1"
+  },
+  "zebralogic": {
+    "path": "ZebraLogicBench/grid_mode/test-00000-of-00001.parquet",
+    "rows": 1000,
+    "content_sha256": "36bf6b9f26ec2e0108fc7a415abe4ad8bf5918e904420686adccd24706fb1e25"
+  }
+}

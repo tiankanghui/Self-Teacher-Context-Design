@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the accompanying paper."
+title: "What Should a Self-Teacher See? Privileged Context Design for On-Policy Self-Distillation"
+type: software
+version: 0.1.0
+date-released: 2026-09-24
+repository-code: "https://github.com/tiankanghui/Self-Teacher-Context-Design"
+authors:
+  - family-names: Tian
+    given-names: Kanghui
+  - family-names: Liu
+    given-names: Siyuan
+  - family-names: Jiang
+    given-names: Tianxiang
+  - family-names: Dong
+    given-names: Shuai
+  - family-names: Li
+    given-names: Yizhuo
+  - family-names: Ding
+    given-names: Tian
+  - family-names: Guo
+    given-names: Yuan
+  - family-names: Li
+    given-names: Songze
+  - family-names: Hou
+    given-names: Haowen
+  - family-names: Wang
+    given-names: Congcong
+  - family-names: Wang
+    given-names: Yi
+preferred-citation:
+  type: article
+  title: "What Should a Self-Teacher See? Privileged Context Design for On-Policy Self-Distillation"
+  year: 2026
+  authors:
+    - family-names: Tian
+      given-names: Kanghui
+    - family-names: Liu
+      given-names: Siyuan
+    - family-names: Jiang
+      given-names: Tianxiang
+    - family-names: Dong
+      given-names: Shuai
+    - family-names: Li
+      given-names: Yizhuo
+    - family-names: Ding
+      given-names: Tian
+    - family-names: Guo
+      given-names: Yuan
+    - family-names: Li
+      given-names: Songze
+    - family-names: Hou
+      given-names: Haowen
+    - family-names: Wang
+      given-names: Congcong
+    - family-names: Wang
+      given-names: Yi
