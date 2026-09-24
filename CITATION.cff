@@ -32,6 +32,10 @@ preferred-citation:
   type: article
   title: "What Should a Self-Teacher See? Privileged Context Design for On-Policy Self-Distillation"
   year: 2026
+  identifiers:
+    - type: url
+      value: "https://arxiv.org/abs/2609.25623"
+      description: "arXiv:2609.25623 [cs.LG]"
   authors:
     - family-names: Tian
       given-names: Kanghui

@@ -4,13 +4,29 @@
 <h3>Privileged Context Design for On-Policy Self-Distillation</h3>
 
 <p>
-  <strong>Kanghui Tian</strong>, Siyuan Liu, Tianxiang Jiang, Shuai Dong,
-  Yizhuo Li, Tian Ding, Yuan Guo, Songze Li, Haowen Hou, Congcong Wang,
-  and Yi Wang
+  Kanghui Tian<sup>1,2</sup> &emsp; Siyuan Liu<sup>3</sup> &emsp;
+  Tianxiang Jiang<sup>2</sup> &emsp; Shuai Dong<sup>1</sup><br>
+  Yizhuo Li<sup>4</sup> &emsp; Tian Ding<sup>5</sup> &emsp;
+  Yuan Guo<sup>6</sup> &emsp; Songze Li<sup>1</sup><br>
+  Haowen Hou<sup>4</sup> &emsp; Congcong Wang<sup>7</sup> &emsp;
+  Yi Wang<sup>2,†</sup>
 </p>
 
 <p>
-  <a href="paper/what-should-a-self-teacher-see.pdf"><img alt="Paper PDF" src="https://img.shields.io/badge/Paper-PDF-b31b1b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"></a>
+  <sup>1</sup>Fudan University &emsp;
+  <sup>2</sup>Shanghai Artificial Intelligence Laboratory &emsp;
+  <sup>3</sup>Nanjing University<br>
+  <sup>4</sup>Shanghai Jiao Tong University &emsp;
+  <sup>5</sup>Peking University &emsp;
+  <sup>6</sup>University of California, Los Angeles &emsp;
+  <sup>7</sup>Tongji University
+</p>
+
+<p><sup>†</sup> Corresponding author</p>
+
+<p>
+  <a href="https://arxiv.org/abs/2609.25623"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2609.25623-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white"></a>
+  <a href="paper/what-should-a-self-teacher-see.pdf"><img alt="Latest PDF" src="https://img.shields.io/badge/Latest-PDF-b31b1b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"></a>
   <a href="#quick-start"><img alt="Quick start" src="https://img.shields.io/badge/Quick_Start-Reproduce-2ea44f?style=for-the-badge&logo=rocket&logoColor=white"></a>
   <a href="#citation"><img alt="Citation" src="https://img.shields.io/badge/Citation-BibTeX-7a5af8?style=for-the-badge"></a>
 </p>
@@ -20,14 +36,15 @@
 </div>
 
 <p align="center">
-  <img src="assets/study-overview.png" width="100%" alt="Study overview: compile semantic contexts once, reuse them in OPSD, and compare context granularity across model scales">
+  <a href="assets/study-overview.png"><img src="assets/study-overview.png" width="100%" alt="Study overview: compile semantic contexts once, reuse them in OPSD, and compare context granularity across model scales"></a>
 </p>
 
 <p align="center"><em>Compile once, reuse across scales: the student sees only the problem while the frozen self-teacher receives one privileged context package.</em></p>
 
 > [!NOTE]
-> The arXiv identifier is pending. The current paper is available as a
-> [repository PDF](paper/what-should-a-self-teacher-see.pdf).
+> The public preprint is [arXiv:2609.25623](https://arxiv.org/abs/2609.25623).
+> The [repository PDF](paper/what-should-a-self-teacher-see.pdf) is a newer
+> manuscript revision intended for a later arXiv update.
 
 > [!IMPORTANT]
 > **TL;DR:** More privileged information is not always better supervision.
@@ -64,23 +81,17 @@ only to the frozen self-teacher when it scores the student's on-policy tokens.
 - The preferred context changes with model scale and evaluation task.
 - Initial teacher--student KL does not order downstream student performance.
 
-Primary in-domain peak Avg@12 results (seed 42):
+### Main in-domain results
 
-| Model | Base | L1 | L2 | L3 | L4 | L5 |
-|---|---:|---:|---:|---:|---:|---:|
-| Qwen3-1.7B | 35.93 | **43.89** | 40.83 | 42.78 | 43.61 | 42.13 |
-| Qwen3-4B | 60.28 | 63.43 | 64.07 | **64.81** | 64.63 | 63.61 |
-| Qwen3-8B | 62.13 | 66.67 | **68.24** | 66.85 | 67.22 | 66.76 |
+<p align="center">
+  <a href="assets/main-results-table.png"><img src="assets/main-results-table.png" width="100%" alt="Table 1: in-domain peak Avg@12 results for Qwen3 1.7B, 4B, and 8B across L1 through L5"></a>
+</p>
+
+<p align="center"><em>Primary in-domain peak Avg@12 results (seed 42). Bold marks the best taught score for each benchmark or aggregate row.</em></p>
 
 These means average the separately selected checkpoint peaks on AIME 2024,
 AIME 2025, and HMMT 2025. The repository also includes selection-free
 step-200 results and three-seed summaries; see [`results/`](results/).
-
-<details>
-<summary><strong>Full benchmark-level results from Table 1</strong></summary>
-<br>
-<img src="assets/main-results-table.png" width="100%" alt="Table 1: in-domain peak Avg@12 results for Qwen3 1.7B, 4B, and 8B across L1 through L5">
-</details>
 
 ## Relationship to OPSD
 
@@ -215,35 +226,24 @@ MODEL_SCALE=4B HINT_LEVEL=L3 SEED=42 EVAL_SUITE=transfer \
 
 The current manuscript is included at
 [`paper/what-should-a-self-teacher-see.pdf`](paper/what-should-a-self-teacher-see.pdf).
-Until the arXiv identifier is assigned, cite the paper as:
+Please cite the public preprint as:
 
 ```bibtex
-@article{tian2026selfteacher,
-  title   = {What Should a Self-Teacher See? Privileged Context Design for
-             On-Policy Self-Distillation},
-  author  = {Tian, Kanghui and Liu, Siyuan and Jiang, Tianxiang and Dong, Shuai
-             and Li, Yizhuo and Ding, Tian and Guo, Yuan and Li, Songze and
-             Hou, Haowen and Wang, Congcong and Wang, Yi},
-  year    = {2026},
-  note    = {arXiv preprint; identifier forthcoming}
+@misc{tian2026selfteacherseeprivilegedcontext,
+  title         = {What Should a Self-Teacher See? Privileged Context Design
+                   for On-Policy Self-Distillation},
+  author        = {Kanghui Tian and Siyuan Liu and Tianxiang Jiang and
+                   Shuai Dong and Yizhuo Li and Tian Ding and Yuan Guo and
+                   Songze Li and Haowen Hou and Congcong Wang and Yi Wang},
+  year          = {2026},
+  eprint        = {2609.25623},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2609.25623}
 }
 ```
 
 Machine-readable citation metadata are provided in [`CITATION.cff`](CITATION.cff).
-
-## Authors and affiliations
-
-- Kanghui Tian — Fudan University; Shanghai Artificial Intelligence Laboratory
-- Siyuan Liu — Nanjing University
-- Tianxiang Jiang — Shanghai Artificial Intelligence Laboratory
-- Shuai Dong — Fudan University
-- Yizhuo Li — Shanghai Jiao Tong University
-- Tian Ding — Peking University
-- Yuan Guo — University of California, Los Angeles
-- Songze Li — Fudan University
-- Haowen Hou — Shanghai Jiao Tong University
-- Congcong Wang — Tongji University
-- Yi Wang — Shanghai Artificial Intelligence Laboratory (corresponding author)
 
 ## Licensing and third-party materials
 
